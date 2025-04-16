@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Demo</title>
+  </head>
+
+  <body>
+    <div class="container mt-4 mb-4">
+      <div class="d-flex align-items-center gap-5 align-items-left">
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex flex-column g-5">
+            <h3 class="text-center">
+              Responsive <b class="text-secondary">Web</b> Design <br />
+              and {CSS} Layouts
+            </h3>
+            <div class="d-flex gap-1 mt-2 flex-wrap justify-content-center">
+              <div class="card shadow px-3 py-1 small">UI/UX</div>
+              <div class="card shadow px-3 py-1 small">Adaptive Design</div>
+              <div class="card shadow px-3 py-1 small">Mobile First Design</div>
+              <div class="card shadow px-3 py-1 small">Fluid Layouts</div>
+              <div class="card shadow px-3 py-1 small">Media Queries</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="systems.png" alt="" />
+        </div>
+      </div>
+      <div class="mt-4 p-2">
+        <b>Responsive Web Design (RWD) </b> Is an approach to web design that
+        ensures a website's content and layout adapt seamlessly to different
+        screen sizes and devices. This means that the website will look great
+        and be easy to use, whether it’s viewed on a smartphone, tablet, laptop,
+        or desktop
+      </div>
+      <section class="mt-5">
+        <h5>Implementation Techniques</h5>
+        <div class="d-grid impl-techniques-block">
+          <div class="card p-3 text-center bg-light">Flex Box</div>
+          <div class="card p-3 text-center bg-light">CSS Grid</div>
+          <div class="card p-3 text-center bg-light">Media Queries</div>
+          <div class="card p-3 text-center bg-light">Relative Units</div>
+        </div>
+      </section>
+      <h4 class="my-4 text-center">CSS Layouts Playground</h4>
+
+      <div class="container p-0">
+        <!-- Media Query Demo -->
+
+        <div class="row g-4">
+          <!-- Flexbox Demo -->
+          <div class="col-lg-6">
+            <div class="demo-card">
+              <div class="card-header">
+                <i class="fas fa-align-left"></i>
+                Flexbox Layout
+              </div>
+              <div class="card-body">
+                <div class="demo-area d-flex flex-wrap gap-2" id="flexDemo">
+                  <div class="flex-item">1</div>
+                  <div class="flex-item">2</div>
+                  <div class="flex-item">3</div>
+                </div>
+
+                <div class="control-panel">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Flex Direction</label>
+                        <select class="form-select" id="flexDirection">
+                          <option value="row">Row</option>
+                          <option value="column">Column</option>
+                          <option value="row-reverse">Row Reverse</option>
+                          <option value="column-reverse">Column Reverse</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Justify Content</label>
+                        <select class="form-select" id="justifyContent">
+                          <option value="flex-start">Flex Start</option>
+                          <option value="center">Center</option>
+                          <option value="flex-end">Flex End</option>
+                          <option value="space-between">Space Between</option>
+                          <option value="space-around">Space Around</option>
+                          <option value="space-evenly">Space Evenly</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Align Items</label>
+                        <select class="form-select" id="alignItems">
+                          <option value="stretch">Stretch</option>
+                          <option value="flex-start">Flex Start</option>
+                          <option value="center">Center</option>
+                          <option value="flex-end">Flex End</option>
+                          <option value="baseline">Baseline</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Flex Wrap</label>
+                        <select class="form-select" id="flexWrap">
+                          <option value="nowrap">No Wrap</option>
+                          <option value="wrap">Wrap</option>
+                          <option value="wrap-reverse">Wrap Reverse</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="btn-group-compact">
+                    <button
+                      class="btn btn-primary btn-compact"
+                      id="addFlexItem"
+                    >
+                      <i class="fas fa-plus"></i> Add Item
+                    </button>
+                    <button
+                      class="btn btn-outline-secondary btn-compact"
+                      id="removeFlexItem"
+                    >
+                      <i class="fas fa-minus"></i> Remove Item
+                    </button>
+                  </div>
+                </div>
+
+                <div class="code-container">
+                  <ul class="code-tabs">
+                    <li>
+                      <button class="code-tab active">CSS Code</button>
+                    </li>
+                  </ul>
+                  <div class="code-display" id="flexCode">
+                    <span class="code-line"
+                      ><span class="code-selector">.flex-container</span>
+                      {</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">display</span>:
+                      <span class="code-value">flex</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">flex-direction</span>:
+                      <span class="code-value">row</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">justify-content</span>:
+                      <span class="code-value">flex-start</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">align-items</span>:
+                      <span class="code-value">stretch</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">flex-wrap</span>:
+                      <span class="code-value">wrap</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">gap</span>:
+                      <span class="code-value">0.5rem</span>;</span
+                    >
+                    <span class="code-line">}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid Demo -->
+          <div class="col-lg-6">
+            <div class="demo-card">
+              <div class="card-header">
+                <i class="fas fa-th"></i>
+                CSS Grid Layout
+              </div>
+              <div class="card-body">
+                <div
+                  class="demo-area"
+                  id="gridDemo"
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 0.5rem;
+                  "
+                >
+                  <div class="grid-item">1</div>
+                  <div class="grid-item">2</div>
+                  <div class="grid-item">3</div>
+                </div>
+
+                <div class="control-panel">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Template Columns</label>
+                        <select class="form-select" id="gridTemplateColumns">
+                          <option value="repeat(2, 1fr)">2 Columns</option>
+                          <option value="repeat(3, 1fr)" selected>
+                            3 Columns
+                          </option>
+                          <option value="repeat(4, 1fr)">4 Columns</option>
+                          <option value="1fr 2fr 1fr">Mixed Widths</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Gap Size</label>
+                        <select class="form-select" id="gridGap">
+                          <option value="0">No Gap</option>
+                          <option value="0.5rem" selected>Small</option>
+                          <option value="1rem">Medium</option>
+                          <option value="2rem">Large</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Justify Items</label>
+                        <select class="form-select" id="justifyItems">
+                          <option value="stretch" selected>Stretch</option>
+                          <option value="start">Start</option>
+                          <option value="center">Center</option>
+                          <option value="end">End</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="control-group">
+                        <label>Align Items</label>
+                        <select class="form-select" id="alignItemsGrid">
+                          <option value="stretch" selected>Stretch</option>
+                          <option value="start">Start</option>
+                          <option value="center">Center</option>
+                          <option value="end">End</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="btn-group-compact">
+                    <button
+                      class="btn btn-primary btn-compact"
+                      id="addGridItem"
+                    >
+                      <i class="fas fa-plus"></i> Add Item
+                    </button>
+                    <button
+                      class="btn btn-outline-secondary btn-compact"
+                      id="removeGridItem"
+                    >
+                      <i class="fas fa-minus"></i> Remove Item
+                    </button>
+                  </div>
+                </div>
+
+                <div class="code-container">
+                  <ul class="code-tabs">
+                    <li>
+                      <button class="code-tab active">CSS Code</button>
+                    </li>
+                  </ul>
+                  <div class="code-display" id="gridCode">
+                    <span class="code-line"
+                      ><span class="code-selector">.grid-container</span>
+                      {</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">display</span>:
+                      <span class="code-value">grid</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">grid-template-columns</span>:
+                      <span class="code-value">repeat(3, 1fr)</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">gap</span>:
+                      <span class="code-value">0.5rem</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">justify-items</span>:
+                      <span class="code-value">stretch</span>;</span
+                    >
+                    <span class="code-line">
+                      <span class="code-property">align-items</span>:
+                      <span class="code-value">stretch</span>;</span
+                    >
+                    <span class="code-line">}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-card">
+          <div class="card-header">
+            <i class="fas fa-mobile-screen-button"></i>
+            Responsive Design
+          </div>
+          <div class="card-body">
+            <div class="media-query-demo mobile-only">
+              <i class="fas fa-mobile-alt me-2"></i> You're viewing this on a
+              mobile device
+            </div>
+            <div class="media-query-demo desktop-only">
+              <i class="fas fa-desktop me-2"></i> You're viewing this on a
+              desktop device
+            </div>
+
+            <div class="code-container">
+              <ul class="code-tabs">
+                <li>
+                  <button class="code-tab active">CSS Code</button>
+                </li>
+              </ul>
+              <div class="code-display">
+                <span class="code-line"
+                  ><span class="code-selector">@media</span> (<span
+                    class="code-property"
+                    >max-width</span
+                  >: <span class="code-value">767.98px</span>) {</span
+                >
+                <span class="code-line">
+                  <span class="code-selector">.mobile-only</span> {
+                  <span class="code-property">display</span>:
+                  <span class="code-value">block</span>; }</span
+                >
+                <span class="code-line">}</span>
+                <span class="code-line"></span>
+                <span class="code-line"
+                  ><span class="code-selector">@media</span> (<span
+                    class="code-property"
+                    >min-width</span
+                  >: <span class="code-value">768px</span>) {</span
+                >
+                <span class="code-line">
+                  <span class="code-selector">.desktop-only</span> {
+                  <span class="code-property">display</span>:
+                  <span class="code-value">block</span>; }</span
+                >
+                <span class="code-line">}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        made with <i class="bi bi-bootstrap"></i> by <b>Althaf</b>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
